@@ -6,7 +6,14 @@ let incrementAdultButton = document.getElementById("incrementAdultTicket");
 let decrementAdultButton = document.getElementById("decrementAdultTicket");
 let incrementChildButton = document.getElementById("incrementChildTicket");
 let decrementChildButton = document.getElementById("decrementChildTicket");
+let nextPage= document.getElementById("seatPage");
 let ticketAmount=0;
+
+
+function setAmountAndLeave(){
+    localStorage.setItem("amount",ticketAmount);
+    window.open("./SeatSelection.html",'_self');
+}
 
 function incrementTicket(type){
     let element =document.getElementById(type);
@@ -58,3 +65,6 @@ decrementChildButton.addEventListener("click", function() {
     decrementTicket("childTicketAmount");
 });
 
+nextPage.addEventListener("click", function(){
+    setAmountAndLeave();
+});

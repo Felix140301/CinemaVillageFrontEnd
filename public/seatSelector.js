@@ -2,6 +2,11 @@ const seatMatrix = document.getElementById("seatMatrix");
 const selectedSeatsList = [];
 const seats = [];
 let seatIndex = 1;
+let seatNumber=localStorage.getItem("amount");
+let totalTickets=document.getElementById("totalTickets");
+
+
+totalTickets.innerHTML="Total tickets: "+ seatNumber; 
 
 function Seat(id) {
     this.id = id;
@@ -11,7 +16,7 @@ function Seat(id) {
 for (let i = 0; i < 40; i++) {
 
         const seatId = seatIndex;
-        const seat = new Seat(seatId); // Corrected the instantiation here
+        const seat = new Seat(seatId); 
         seats.push(seat);
         const seatDiv = document.createElement("div");
         const seatIdP=document.createElement("p");
@@ -28,28 +33,30 @@ for (let i = 0; i < 40; i++) {
         seatDiv.appendChild(seatIdP);
         
         seatIndex++;
-        seatDiv.addEventListener("click", function() { // Changed the event listener function to inline
-            selectSeat(seat); // Passed the seat object to selectSeat function
+        seatDiv.addEventListener("click", function() { 
+            selectSeat(seat); 
         });
     
 }
 
 function selectSeat(seat) {
-    if (seat.available) {
+    console.log(seatNumber)
+    if (seat.available && seatNumber>0) {
         seat.available = false;
         selectedSeatsList.push(seat.id);
-        console.log(selectedSeatsList);
-        console.log(seat.id,seat.available)
-        
-        document.getElementById(seat.id).classList.add("selected");
-    } else {
+        seatNumber--; 
+        totalTickets.innerHTML="Total tickets: "+ seatNumber; 
+        document.getElementById(seat.id).classList.add("bg-mustard-100");
+    } else if(seat.available==false){
         seat.available = true;
+        seatNumber++;
+        totalTickets.innerHTML="Total tickets: "+ seatNumber;
         const index = selectedSeatsList.indexOf(seat.id);
         if (index !== -1) {
             selectedSeatsList.splice(index, 1);
         }
         console.log(selectedSeatsList);
-        // Update seat appearance or perform any other actions if needed
-        document.getElementById(seat.id).classList.remove("selected");
+        
+        document.getElementById(seat.id).classList.remove("bg-mustard-100");
     }
 }
