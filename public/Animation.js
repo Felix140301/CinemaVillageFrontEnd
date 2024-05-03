@@ -1,4 +1,4 @@
-let logIn = document.getElementById('logIn');
+﻿let logIn = document.getElementById('logIn');
 let transitionDiv = document.getElementById('transition');
 let active = 0;
 let repeatPasswordInput = document.getElementById('repeatPasswordInput')
@@ -23,7 +23,7 @@ function change() {
             anime({
 
                 targets: '#transition',
-                translateX: '325',
+                translateX: '495',
                 duration: '1000'
 
             }
@@ -39,15 +39,21 @@ function change() {
             )
 
         }
-
+        LogInFormDiv.classList.remove("hidden");
         anime({
-            targets: '#SignUp',
-            translateX: '-170',
+            targets: '#LogIn',
+            translateX: ['60','0'],
             duration: '1000'
         }
         )
+       
         SignUpFormDiv.classList.add("hidden");
-        LogInFormDiv.classList.remove("hidden");
+        anime({
+            targets: '#SignUp',
+            translateX: '60',
+            duration:'450'
+        }
+        )
         logIn.classList.remove('ml-10')
         logIn.classList.add('mr-10')
         transitionDiv.classList.remove('rounded-l-full');
@@ -63,14 +69,22 @@ function change() {
 
         },
         )
-
+        SignUpFormDiv.classList.remove("hidden");
         anime({
-            targets: '#LogIn',
+            
+            targets: '#SignUp',
             translateX: '0',
             duration: '1000'
         })
-        SignUpFormDiv.classList.remove("hidden");
+        
         LogInFormDiv.classList.add("hidden");
+
+        anime({
+            targets: '#LogIn',
+            translateX: '-60',
+            duration: '450'
+        }
+        )
         logIn.classList.add('ml-10')
         logIn.classList.remove('mr-10')
         transitionDiv.classList.remove('rounded-r-full');

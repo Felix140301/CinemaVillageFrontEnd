@@ -8,18 +8,21 @@ let totalTickets=document.getElementById("totalTickets");
 
 totalTickets.innerHTML="Total tickets: "+ seatNumber; 
 
-function Seat(id) {
+function Seat(id, avalability) {
     this.id = id;
-    this.available = true; // Corrected the syntax here
+    this.available = avalability; // Corrected the syntax here
 }
 
 for (let i = 0; i < 40; i++) {
 
         const seatId = seatIndex;
-        const seat = new Seat(seatId); 
+        const seat = new Seat(seatId,true); 
         seats.push(seat);
         const seatDiv = document.createElement("div");
         const seatIdP=document.createElement("p");
+        
+        if(seat.available==false)
+        seatDiv.classList.add("bg-zeus-800");
         seatDiv.classList.add("seat");
         seatDiv.classList.add("w-7");
         seatDiv.classList.add("m-4");

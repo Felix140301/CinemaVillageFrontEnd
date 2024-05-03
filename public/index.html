@@ -51,16 +51,55 @@
                     <div id="SignUp" class="z-30 text-center h-auto gap-5 w-44 mt-5 p-28 pt-4 bg-mustard-100 rounded-xl flex flex-col justify-start items-center md:px-44 shadow-2xl">
 
                         <h1 id="FormTitle" class=" w-48 text-lavender-bush font-Fraunces text-4xl p-0 m-0 mb-2 ">Sign Up</h1>
+                        <form  id="formSignUp" class="flex flex-col gap-3 justify-start items-center font-BarlowSemiCondensed text-xl text-zinc-50">
 
-                        <partial name="/Views/Shared/Forms/FormSignUp.cshtml" model="@Model.SignUpAppModel" />
+                            <label id="FirstName">First Name</label>
+                            <input asp-for="FirstName" id="firstNameInput" class="rounded-full text-night" />
+                        
+
+                            <label id="LastName">Last Name</label>
+                            <input asp-for="LastName" id="lastNameInput" class="rounded-full text-night" />
+                        
+
+                            <label>Email address</label>
+                            <input asp-for="Email" id="emailInput" class="rounded-full text-night" type="email" />
+                       
+
+                            <label>Password</label>
+                            <input asp-for="Password" id="passwordInput" class="rounded-full text-night" type="password" />
+   
+
+                            <label id="repeatPasswordTitle"> Repeat password</label>
+                            <input asp-for="RepeatPassword" id="repeatPasswordInput" class="rounded-full text-night" type="password" />
+
+                            <button id="btnSubmitFormSignUp" class="rounded-full bg-lavender-bush shadow-xl border-r-4 w-36 border-b-4 mt-4 text-night active:translate-y-[2px] active:border-b-2 active:border-r-2">
+                            Sign Up
+                            </button>
+
+                        </form>
+                        
 
                     </div>
 
                     <div id="LogIn" class="hidden z-30 text-center h-auto gap-5 w-44 mt-5 p-28 pt-4 bg-mustard-100 rounded-xl flex flex-col justify-start items-center md:px-44 shadow-2xl">
 
                         <h1 id="FormTitle" class=" w-48 text-lavender-bush font-Fraunces text-4xl p-0 m-0 mb-2 ">Log In</h1>
+                        <form  method="post" id="formLogin" class="flex flex-col gap-3 justify-start items-center font-BarlowSemiCondensed text-xl text-zinc-50">
 
-                        <partial name="/Views/Shared/Forms/FormLogIn.cshtml" model="@Model.LogInAppModel" />
+                            <label>Email address</label>
+                            <input asp-for="Email" id="emailInput" class="rounded-full text-slate-700" type="email" />
+                           
+                        
+                            <label>Password</label>
+                            <input asp-for="Password" id="passwordInput" class="rounded-full text-slate-700" type="password" />
+                            
+                        
+                            <button id="btnSubmitFormLogIn" class="rounded-full bg-lavender-bush shadow-xl border-r-4 w-36 border-b-4 mt-4 border-slate-800 active:translate-y-[2px] active:border-b-2 active:border-r-2" onclick="getFormLogInData()">
+                                Log In
+                            </button>
+                        
+                        </form>
+                        
 
                     </div>
 
@@ -128,19 +167,12 @@
                 </div>
             </div>
         </div>
-        <div class="bg-mustard-200 h-screen">
-            <h1 class="text-6xl font-Bebas-Neue text-night font-bold">Open Air Cinema</h1>
-            <p class="text-xl text-zinc-800 font-Lato font-bold">
-                Ditch the popcorn box and embrace the starlight! 
-                <br>
-                    Cinema Village isn't your average movie theater. Picture this: a warm summer night, the gentle hum of conversation,
-                    <br>
-                        and the anticipation building as you settle into a comfy, open-air seat. A giant screen flickers to life, casting a magical glow as your favorite film
-                        <br> or a hidden gem waiting to be discovered unfolds beneath a breathtaking canvas of stars. 
-                        <br>Cinema Village is more than a theater, it's an immersive experience that will leave you breathless. 
-                        <br>So, gather your friends, your sweetheart, or simply your adventurous spirit, and prepare for a night you won't forget.
-                        <br>
-                            Let Cinema Village transport you to another world, all under the magical embrace of the summer sky.
+        <div class="bg-mustard-200 h-screen flex items-center justify-center">
+            <h1 class="text-[14rem] font-Bebas-Neue text-night font-bold">Open Air Cinema</h1>
+            <p class="text-2xl text-zinc-800 font-Montserrat font-bold">
+                Cinema Village is an open-air movie theater offering a magical summer experience under the stars. <br>
+                Ditch the stuffy cinemas and settle into comfy <br>seats for a unique night with friends,
+                loved ones, or simply your adventurous spirit.
             </p>
         </div>
     </div>

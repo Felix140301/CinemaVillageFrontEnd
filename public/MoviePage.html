@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="output.css">
-    <link rel="icon" href="./img/IuliaLogo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Gothic+A1&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -21,7 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./TicketCount.js" defer></script>
+
 
 </head>
 
@@ -99,59 +98,20 @@
         <div class="col-span-1 row-span-2 col-start-1 col-end-2 row-start-1 row-end-3">
             <img class="m-10 z-20 relative" width="300" src="https://m.media-amazon.com/images/M/MV5BN2QyZGU4ZDctOWMzMy00NTc5LThlOGQtODhmNDI1NmY5YzAwXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UY4096_.jpg">
         </div>
-    </div>   
-    <div class="flex flex-col justify-start items-center h-screen font-Hanken-Grotesk text-center">
-        <div class="flex items-center justify-evenly bg-lavender-bush w-3/4 rounded-t-xl text-2xl border-b-4 border-mustard-200">
-            <h1 class="mx-10 my-4">Ticket</h1>
-            <h1 class="mx-10 my-4">Price</h1>
-            <h1 class="mx-10 my-4">Amount</h1>
+    </div> 
+    <div class="grid grid-cols-2">
+        <div class="rounded-lg w-1/2 bg-lavender-bush text-xl font-Montserrat p-4 text-center col-start-1 col-end-2">
+            <h1>Director: Dennis Vilenuve</h1>
+            <h2>Cast: Zendaya, Temothee Chamlet, Jason Momoa</h2>
+            <h3>Rating:4.5/5</h3>
         </div>
-        <div  class="flex items-center justify-evenly gap-7 bg-lavender-bush w-3/4 text-xl border-b-2 border-mustard-200">
-            <h1 class="">Student</h1>
-            <h1 class="ml-6 my-4">24</h1>
-            <h1 class="ml-10 flex items-center justify-center gap-4">
-                <button id="studentDecrementTicket"><i class="fa-solid fa-minus"></i></button>
-                   <p id="studentTicketAmount">0</p>
-                <button id="studentIncrementTicket"><i class="fa-solid fa-plus"></i></button>
-            </h1>
+        <div class="col-span-2 col-start-1 col-end-3 w-1/2 self-center">
+            <p class="font-Montserrat text-lavender-bush ">
+                Paul Atreides unites with Chani and the Fremen while on a warpath of revenge against the conspirators who destroyed his family. 
+                Facing a choice between the love of his life and the fate of the known universe, he endeavors to prevent a terrible future only he can foresee.
+            </p>
         </div>
-        <div class="flex items-center justify-evenly gap-7 bg-lavender-bush w-3/4 text-xl border-b-2 border-mustard-200">
-            <h1 class="mx-5">Senior</h1>
-            <h1 class="my-4 mr-4">28</h1>
-            <h1 class="ml-7 flex items-center justify-center gap-4">
-                <button id="decrementSeniorTicket"><i class="fa-solid fa-minus"></i></button>
-                   <p id="seniorTicketAmount">0</p>
-                <button id="incrementSeniorTicket"><i class="fa-solid fa-plus"></i></button>
-            </h1>
-        </div>
-        <div class="flex items-center justify-evenly gap-7 bg-lavender-bush w-3/4 text-xl border-b-2 border-mustard-200">
-            <h1 class="ml-4">Adult</h1>
-            <h1 class="my-4 ml-8">30</h1>
-            <h1 class="ml-8 flex items-center justify-center gap-4">
-                <button id="decrementAdultTicket"><i class="fa-solid fa-minus"></i></button>
-                   <p id="adultTicketAmount">0</p>
-                <button id="incrementAdultTicket"><i class="fa-solid fa-plus"></i></button>
-            </h1>
-        </div>
-        <div class="flex items-center justify-evenly gap-7 bg-lavender-bush w-3/4 text-xl border-b-2 border-mustard-200">
-            <h1 class="my-4">Children</h1>
-            <h1 class="m-5">30</h1>
-            <h1 class="ml-7 flex items-center justify-center gap-4">
-                <button id="decrementChildTicket"><i class="fa-solid fa-minus"></i></button>
-                   <p id="childTicketAmount">0</p>
-                <button id="incrementChildTicket"><i class="fa-solid fa-plus"></i></button>
-            </h1>
-        </div>
-        <diV class="flex justify-end w-3/4 m-4">
-            <button id="seatPage">
-                <a href="./SeatSelection.html" class="relative inline-block px-10 py-4 group">
-                    <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-mustard-100 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
-                    <span class="absolute inset-0 w-full h-full bg-mustard-200 border-2 border-lavender-bush group-hover:bg-lavender-bush"></span>
-                    <span class="relative text-black group-hover:text-night">Next</span>
-                </a>
-            </button>
-        </diV>
-    
+    </div>    
     </div>
    
    
